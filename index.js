@@ -7,7 +7,6 @@ const BOT_TOKEN = '7692117384:AAH5DcBMYcoVW-Dz-LeoXSD2HuZCGnIMxYw';
 
 const bot = new Telegraf(BOT_TOKEN);
 
-const fs = require('fs');
 if (process.env.GOOGLE_CREDENTIALS) {
   fs.writeFileSync('credentials.json', process.env.GOOGLE_CREDENTIALS);
 }
