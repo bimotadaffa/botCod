@@ -1,11 +1,11 @@
-require('dotenv').config();
 const { Telegraf, Markup } = require('telegraf');
 const { google } = require('googleapis');
+const fs = require('fs');
 
-// =========== Ganti dengan nama file credentials kamu
-const CREDENTIALS_PATH = 'dwsallorder-b9c55fa0a02d.json';
+// === Masukkan token bot Telegram langsung di sini (!!! JANGAN untuk produksi/real project) ===
+const BOT_TOKEN = '7692117384:AAH5DcBMYcoVW-Dz-LeoXSD2HuZCGnIMxYw';
 
-const bot = new Telegraf(process.env.BOT_TOKEN);
+const bot = new Telegraf(BOT_TOKEN);
 
 const fs = require('fs');
 if (process.env.GOOGLE_CREDENTIALS) {
