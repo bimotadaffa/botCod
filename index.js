@@ -7,11 +7,18 @@ const CREDENTIALS_PATH = 'dwsallorder-b9c55fa0a02d.json';
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
+const fs = require('fs');
+if (process.env.GOOGLE_CREDENTIALS) {
+  fs.writeFileSync('credentials.json', process.env.GOOGLE_CREDENTIALS);
+}
+
+
 // ====== Google Sheets Auth
 const auth = new google.auth.GoogleAuth({
-  keyFile: CREDENTIALS_PATH,
+  keyFile: 'credentials.json', // harus sama dengan file hasil tulis di atas!
   scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
 });
+
 const sheets = google.sheets({ version: 'v4', auth });
 
 // ====== Keyboard Menu Utama
